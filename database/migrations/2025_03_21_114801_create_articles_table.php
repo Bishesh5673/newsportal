@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('image');
-            $table->string('content');
+            $table->longText('content');
             $table->integer('views')->default(0);
             $table->string('status')->default("pending");
             $table->longText('meta_keywords')->nullable();

@@ -39,6 +39,7 @@ class CompanyController extends Controller
             "email"=>"required|email",
             "contact"=>"required|numeric|digits:10",
             "address"=>"required|max:255",
+            "logo"=>"required|mimes:jpg,png,gif,avif,svg,webp"
         ]);
 
         $company= new Company();

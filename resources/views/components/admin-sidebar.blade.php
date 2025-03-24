@@ -10,15 +10,21 @@
         <a href="{{route('dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
       </li>
       <li class="dropdown {{Request::routeIs('admin.company.*') ? 'active' : '' }} ">
-        <a href="{{route('admin.company.index')}}" class="nav-link"><i data-feather="monitor"></i><span>Company</span></a>
+        <a href="{{route('admin.company.index')}}" class="nav-link"><i data-feather="briefcase"></i><span>Company</span></a>
       </li>
-      <li class="dropdown ">
+      <li class="dropdown {{Request::routeIs('admin.category.*') ? 'active' : '' }} ">
+        <a href="{{route('admin.category.index')}}" class="nav-link"><i data-feather="tag"></i><span>Category</span></a>
+      </li>
+      <li class="dropdown {{Request::routeIs('admin.article.*') ? 'active' : '' }} ">
+        <a href="{{route('admin.article.index')}}" class="nav-link"><i data-feather="tag"></i><span>Article</span></a>
+      </li>
+      {{-- <li class="dropdown ">
         <a href="#" class="menu-toggle nav-link has-dropdown"><i
             data-feather="briefcase"></i><span>Widgets</span></a>
         <ul class="dropdown-menu">
           <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
           <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
         </ul>
-      </li>
+      </li> --}}
     </ul>
   </aside>
