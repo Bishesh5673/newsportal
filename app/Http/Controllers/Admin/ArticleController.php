@@ -88,6 +88,7 @@ class ArticleController extends Controller
         $article->content = $request->content;
         $article->meta_keywords = $request->meta_keywords;
         $article->meta_description = $request->meta_description;
+        $article->status = $request->status;
         $file = $request->image;
         if($file){
             $filename = time().'.'.$file->getClientOriginalExtension();

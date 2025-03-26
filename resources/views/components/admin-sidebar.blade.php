@@ -18,6 +18,9 @@
       <li class="dropdown {{Request::routeIs('admin.article.*') ? 'active' : '' }} ">
         <a href="{{route('admin.article.index')}}" class="nav-link"><i data-feather="tag"></i><span>Article</span></a>
       </li>
+      <li class="dropdown {{Request::routeIs('admin.advertise.*') ? 'active' : '' }} ">
+        <a href="{{route('admin.advertise.index')}}" class="nav-link"><i data-feather="tag"></i><span>Advertise</span></a>
+      </li>
       {{-- <li class="dropdown ">
         <a href="#" class="menu-toggle nav-link has-dropdown"><i
             data-feather="briefcase"></i><span>Widgets</span></a>

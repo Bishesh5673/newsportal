@@ -69,6 +69,19 @@
                                 </div>
                             @enderror
                         </div>
+                        <div class="mb-3 col-6" >
+                            <label for="status">Update Status</label>
+                            <select name="status" id="status" class="form-control ">
+                                <option value="pending"{{$articles->status=='pending'?'selected':''}}>Pending</option>
+                                <option value="approved"{{$articles->status=='approved'?'selected':''}}>Approved</option>
+                                <option value="rejected"{{$articles->status=='rejected'?'selected':''}}>Rejected</option>
+                            </select>
+                            @error('status')
+                                <div class="text-danger">
+                                    {{$message}}
+                                </div>
+                            @enderror
+                        </div>
                         <div class="mb-3 col-6">
                             <label for="image">Image</label>
                             <input type="file" name="image" id="image" class="form-control">
