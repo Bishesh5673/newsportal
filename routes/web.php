@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get("/",[PageController::class,'home'])->name('home');
+Route::get("/article/{id}", [PageController::class, 'article'])->name('article');
+Route::get("/category/{slug}", [PageController::class, 'category'])->name('category');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

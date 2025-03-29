@@ -1,12 +1,18 @@
 <header>
     <div class="container flex flex-col md:flex-row gap-4 md:gap-6 lg:gap-10 items-center justify-between py-2 ">
         <div>
-            <img height="100" width="200" class="h-[40px] md:h-[60px] lg:h-[90px]"  src="https://jawaaf.com/storage/01JMVVKFF1AF9YNXQASQ2KGHGJ.png" alt="Jawaaf">
+            <img height="100" width="200" class="h-[40px] md:h-[60px] lg:h-[90px]"  src="{{asset($company->logo)}}" alt="Jawaaf">
         </div>
 
         <div>
-
-            <img class="h-[50px] md:h-[80px] lg:h-[100px]" src="https://jawaaf.com/storage/01JJ6H6TARD078P4P5ZFMQSY2A.gif" alt="">
+            @foreach ($advertises as $advertise)
+            @if ($advertise->location == 'header')
+                <a href="{{ $advertise->redirect_url }}" target="_blank">
+                    <img class="h-[50px] md:h-[80px] lg:h-[100px]" src="{{ asset($advertise->image) }}"
+                        alt="">
+                </a>
+            @endif
+        @endforeach
         </div>
 
         <div>
@@ -19,7 +25,7 @@
     <nav class="bg-[var(--primary-color)] text-white text-xl py-4 my-5">
         <div class="lg:hidden container text-right text-white">
             <button class=""
-             type="button" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
+             type="button" aria-label="Open sidebar" data-drawer-target="drawer-example" data-drawer-show="drawer-example" aria-controls="drawer-example">
              <i class="fa-solid fa-bars"></i>
             </button>
          </div>
@@ -28,15 +34,11 @@
                 <li>
                     <a href="{{route('home')}}" class="font-bold">गृहपृष्ठ</a>
                 </li>
+                @foreach ($categories as $category)
                 <li>
-                    <a href="">समाचार</a>
+                    <a href="{{ route('category', $category->slug) }}">{{$category->nep_title}}</a>
                 </li>
-                <li>
-                    <a href="">मनोरञ्जन</a>
-                </li>
-                <li>
-                    <a href="">खेलकुद</a>
-                </li>
+                @endforeach
             </ul>
 
             <div>
